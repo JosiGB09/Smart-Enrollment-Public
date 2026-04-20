@@ -1,0 +1,226 @@
+.app-sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background: #ffffff;
+  color: #162033;
+  border-right: 1px solid #e7edf5;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: width 0.28s ease, transform 0.28s ease;
+  box-shadow: 10px 0 30px rgba(15, 23, 42, 0.04);
+}
+
+.app-sidebar.collapsed {
+  width: 92px;
+}
+
+.app-sidebar.mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.app-sidebar.mobile.collapsed {
+  transform: translateX(-100%);
+  width: 250px;
+}
+
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.35);
+  z-index: 999;
+}
+
+.sidebar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1.25rem 1rem 1rem;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.sidebar-brand-mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #0d6efd 0%, #0b57d0 100%);
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  box-shadow: 0 10px 24px rgba(13, 110, 253, 0.22);
+  flex-shrink: 0;
+}
+
+.sidebar-brand-copy {
+  min-width: 0;
+}
+
+.sidebar-brand-copy strong {
+  display: block;
+  color: #162033;
+  font-size: 0.93rem;
+  line-height: 1.15;
+}
+
+.sidebar-brand-copy span {
+  display: block;
+  margin-top: 0.2rem;
+  color: #b7791f;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.sidebar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.sidebar-icon-btn {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #e4eaf2;
+  border-radius: 12px;
+  background: #f8fafc;
+  color: #334155;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sidebar-icon-btn:hover {
+  background: #eef4ff;
+  border-color: #d4e2ff;
+  color: #0d6efd;
+}
+
+.sidebar-divider {
+  height: 1px;
+  margin: 0 1rem 1rem;
+  background: linear-gradient(90deg, transparent 0%, #e7edf5 20%, #e7edf5 80%, transparent 100%);
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0 0.85rem 1rem;
+}
+
+.sidebar-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-height: 48px;
+  padding: 0.75rem 0.9rem;
+  border-radius: 16px;
+  color: #334155;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.sidebar-link-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: #f3f6fb;
+  color: inherit;
+  flex-shrink: 0;
+}
+
+.sidebar-link-label {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.sidebar-link.active-link {
+  background: #eef4ff;
+  color: #0b57d0;
+}
+
+.sidebar-link.active-link::before {
+  content: "";
+  position: absolute;
+  left: -0.2rem;
+  top: 10px;
+  bottom: 10px;
+  width: 4px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #f4b400 0%, #d89b00 100%);
+}
+
+.sidebar-link.active-link .sidebar-link-icon {
+  background: #dbeafe;
+  color: #0b57d0;
+}
+
+[data-theme="dark"] .app-sidebar {
+  background: #111827;
+  color: #f8fafc;
+  border-right-color: #243041;
+  box-shadow: none;
+}
+
+[data-theme="dark"] .sidebar-brand-copy strong {
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .sidebar-icon-btn {
+  background: #182131;
+  border-color: #263244;
+  color: #dbe4f0;
+}
+
+[data-theme="dark"] .sidebar-icon-btn:hover {
+  background: #1f2b3d;
+  color: #8ab4ff;
+  border-color: #36507a;
+}
+
+[data-theme="dark"] .sidebar-divider {
+  background: linear-gradient(90deg, transparent 0%, #243041 20%, #243041 80%, transparent 100%);
+}
+
+[data-theme="dark"] .sidebar-link {
+  color: #dbe4f0;
+}
+
+[data-theme="dark"] .sidebar-link:hover {
+  background: #182131;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .sidebar-link-icon {
+  background: #182131;
+}
+
+[data-theme="dark"] .sidebar-link.active-link {
+  background: rgba(59, 130, 246, 0.16);
+  color: #8ab4ff;
+}
+
+[data-theme="dark"] .sidebar-link.active-link .sidebar-link-icon {
+  background: rgba(59, 130, 246, 0.18);
+  color: #8ab4ff;
+}
