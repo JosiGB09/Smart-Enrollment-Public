@@ -22,9 +22,13 @@ Este proyecto se encuentra **en desarrollo**, por lo que actualmente no incluye 
 ## Estructura del proyecto
 
 Sistema-de-Matricula/
+
 ├── BaseSql/
+
 ├── Documentacion/
+
 ├── SmartEnrollment-Api/
+
 └── SmartEnrollment-frontend/
 
 ## Requisitos
